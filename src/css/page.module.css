@@ -1,0 +1,15 @@
+.body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column; /* Orientación vertical */
+  min-height: 100vh; /* Altura mínima de la pantalla completa */
+  width: 100%; /* Ancho completo */
+  height: 100%;
+  margin: 0;
+  /* margin: 0; Sin margen */
+  background-color: aquamarine;
+}
+.container {
+  flex: 1;
+  height: 100%;
+}
