@@ -7,9 +7,8 @@
   height: 100%;
   margin: 0;
   /* margin: 0; Sin margen */
-  background-color: aquamarine;
 }
 .container {
   flex: 1;
-  height: 100%;
+  /* background-color: aquamarine; */
 }

@@ -11,6 +11,4 @@ export default function page() {
         </div>
         <Footer />
       </body>
-    </>
-  );
-}
+    </>);}
