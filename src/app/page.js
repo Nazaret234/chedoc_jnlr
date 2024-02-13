@@ -5,10 +5,13 @@ import styles from "@/css/page.module.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "@/screens/home";
 import Multi from "@/screens/multi";
+import { Provider } from 'react-redux';
+import store from "@/redux/store";
 
 export default function page() {
   return (
     <>
+    <Provider store={store}>
       <BrowserRouter>
         <body className={styles.body}>
           <div>
@@ -21,6 +24,7 @@ export default function page() {
           <Footer />
         </body>
       </BrowserRouter>
+      </Provider>
     </>
   );
 }
