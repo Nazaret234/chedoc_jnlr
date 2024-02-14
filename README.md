@@ -35,16 +35,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-<>
-    <div>
-      <h1>Popular Series</h1>
-      <div>
-        {series.map((item) => (
-          <div key={item.title}>
-            <img src={item.images["Poster Art"].url} alt={item.title} />
-            <h3>{item.title}</h3>
-          </div>
-        ))}
-      </div>
-    </div>
-  </>
+Proyecto de Jesus de Nazaret Lopez Ramirez 5C 13/02/2024
