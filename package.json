@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "scp ./paqueton.zip  root@64.23.157.145:/var/www/priscete.cloud/html/"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
