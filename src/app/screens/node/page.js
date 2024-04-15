@@ -1,5 +1,6 @@
 import { db } from "@/app/firebase";
 import { ref, onValue } from "firebase/database";
+import { TemplateContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -30,17 +31,15 @@ const Data = styled.p`
 `;
 
 export default function Node() {
-  const [data, setData] = useState({
-    t: 0,
-    h: 0,
-  });
+  const [temp, setTemp] = useState(0);
+  const [hum, setHum] = useState(0);
   const dataRefTemp = ref(db, "temperatura");
   onValue(
     dataRefTemp,
     (snapshot) => {
-      const te = snapshot.val();
       setTimeout(() => {
-        setData({ ...data, t: te });
+        const te = snapshot.val();
+        setTemp(te);
       }, 500);
     },
     (error) => {
@@ -50,18 +49,18 @@ export default function Node() {
 
   const dataRefHum = ref(db, "humedad");
   onValue(dataRefHum, (snapshot) => {
-    const hu = snapshot.val();
     setTimeout(() => {
-      setData({ ...data, h: hu });
+      const hu = snapshot.val();
+      setHum(hu);
     }, 500);
   });
   return (
     <Container>
-      <Title>Temperatura Invernadero</Title>
+      <Title>Temperatura y Humedad Invernadero</Title>
       <Data>
-        Temperatura: {data.t}°C
+        Temperatura: {temp}°C
         <br />
-        Humedad: {data.h}%
+        Humedad: {hum}%
       </Data>
     </Container>
   );
